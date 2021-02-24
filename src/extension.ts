@@ -2,7 +2,7 @@ import * as vscode from 'vscode'
 
 export function activate(context: vscode.ExtensionContext) {
 	const disposable = vscode.languages.registerDocumentSymbolProvider(
-		{ scheme: 'file', pattern: '**/*.p8' },
+		{ language: "lua" },
 		new Pico8DocumentSymbolProvider())
 	context.subscriptions.push(disposable)
 }
